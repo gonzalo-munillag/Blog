@@ -1,2 +1,2 @@
-Here you can find the papers I found interesting and decided to implement in Python.
+**Here you can find the papers I found interesting and decided to implement in Python.**
 
