@@ -17,6 +17,7 @@ Cheers!
 | Publication | Blockchain | 2020-07-02| [A Blockchain-based Flexibility Market Platform for EV Fleets](https://ieeexplore.ieee.org/document/9131332/metrics#metrics)
 | Publication | Privacy | 2020-06-04 | [Towards a Privacy-Enhancing Tool Based on De- Identification Methods](https://aisel.aisnet.org/pacis2020/157/)
 | Publication | Privacy | 2020-05-05 | [The Use of De-identification Methods for Secure and Privacy-enhancing Big Data Analytics in Cloud Environments](https://www.scitepress.org/PublicationsDetail.aspx?ID=Fo6z4LhPuHA=&t=1)
+|Implementation| Blockchain| 2019-07-01| [Auction_Ethereum_Smart_Contract ](https://github.com/gonzalo-munillag/Blog/tree/main/My_implementations/Auction_Ethereum_Smart_Contract)
 
 
 
