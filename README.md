@@ -1,5 +1,3 @@
-# What's in here?
-
 Hi!
 
 My name is Gonzalo Munilla Garrido, I am a PhD student researching privacy preservation techniques, namely differential privacy.
