@@ -1,6 +1,6 @@
 Hi!
 
-My name is Gonzalo Munilla Garrido, I am a PhD student researching privacy preservation techniques, namely differential privacy.
+I am a PhD student researching privacy preservation techniques, namely differential privacy.
 
 This repository contains my own code with some of my experiments and ideas, and implementations of papers from other authors. See the table of content below. 
 
