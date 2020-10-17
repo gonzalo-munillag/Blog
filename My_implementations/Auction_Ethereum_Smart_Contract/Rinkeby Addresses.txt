@@ -1,0 +1,34 @@
+Auction
+
+0x68fed8994b76d42c9fafa70baac1367184bb166a
+https://rinkeby.etherscan.io/tx/0x4e827808718af7d6cb53150c520de31f77aec0d9cfaef72e5bdc7215ad17ba2b
+
+
+
+TOKEN
+
+0x602450b7bbaa725f118609e62bea79590b9634b6
+https://rinkeby.etherscan.io/tx/0xd07835787a145f0ae01053c9d1a51bdbe865053487ba8ca0f4cf2e59667dd0ca
+
+
+
+RINKEBY TRANSACTIONS
+
+Approve the Auction smart contract to withdraw my funds
+https://rinkeby.etherscan.io/tx/0x4eb2e5f52b66ef276a3d22ebd2b5ac8c9bf066449c1c4074ce56a7b530df03d1
+
+Set token address in Auction smart contract
+https://rinkeby.etherscan.io/tx/0x3a0774f847080684de99b782b46ce675b2a9051df1e3cbe911dc67b58ab6b681
+
+SET NAMES:
+
+SLOCKIT_ROCKS!!!
+100
+https://rinkeby.etherscan.io/tx/0xe540b3a8ac50344ce525c6248a2b99605af8e0506e9c39df526635e2245db01d
+
+BID superior to the last bid
+https://rinkeby.etherscan.io/tx/0xf427ce981d32a44c4f6c665d442e2a09bc49a836cb48377ce1de24e7e99e2980
+https://rinkeby.etherscan.io/tx/0x06bf0c02658b3d44644e2785253aa9035decae9b2878794800f3acbdebc6c9eb
+
+Finish the auction
+https://rinkeby.etherscan.io/tx/0x0c01801b44fad65a452a213c42c9dade289eeecf3f68a363c17d323627d3a4d7
