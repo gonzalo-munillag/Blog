@@ -10,7 +10,7 @@ The goal of this notebook is to implement the following paper from 2011 with aro
 
 This paper states that even though Differential Privacy (DP) protects any individual in a dataset by cloaking with noise the most extreme query answers possible between 2 neighboring datasets, due to the finite amount of dataset possibilities and the worst-case adversary model (almost perfect background knowledge and infinite computation power), some distributions of the real dataset behind the DP query results are more likely than others, and therefore this needs to be taken into consideration when calculating epsilon. The authors used bounded and unbounded sensitivity (although back then apparently were not referred to them as such) to find a tight bound for epsilon with binary search.
 
-My humble opinion is that the paper is succinct, elegant and it has the ability to take your understanding of DP further. I would like to thank the authors **Jaewoo Lee** and **Chris Clifton** for these two days I spent implementing :) and I invite everyone to have a look at the paper and check the code if you want to understand it better.
+My humble opinion is that the paper is succinct, elegant and really pushes your knowledge further. I would like to thank the authors **Jaewoo Lee** and **Chris Clifton** for these two days I spent implementing :) and I invite everyone to have a look at the paper and check the code if you want to understand it better.
 
 **Contributions and findings of this notebook:**
 	
