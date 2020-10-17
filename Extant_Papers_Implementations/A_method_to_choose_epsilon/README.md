@@ -3,7 +3,8 @@
 [Notebook](https://github.com/gonzalo-munillag/Blog/blob/main/Extant_Papers_Implementations/A_method_to_choose_epsilon/How_much_is_enough_Calculating_An_Optimal_Epsilon.ipynb)
 
 The goal of this notebook is to implement the following paper from 2011 with around 20 citations: **How much is enough? Choosing epsilon for Differential Privacy**
-[link to pdf](https://git.gnunet.org/bibliography.git/plain/docs/Choosing-%CE%B5-2011Lee.pdf)
+
+[link to paper pdf](https://git.gnunet.org/bibliography.git/plain/docs/Choosing-%CE%B5-2011Lee.pdf)
 [link to Springer Link](https://link.springer.com/chapter/10.1007/978-3-642-24861-0_22)
 
 This paper states that even though Differential Privacy (DP) protects any individual in a dataset by cloaking with noise the most extreme query answers possible between 2 neighboring datasets, due to the finite amount of dataset possibilities and the worst-case adversary model (almost perfect background knowledge and infinite computation power), some distributions of the real dataset behind the DP query results are more likely than others, and therefore this needs to be taken into consideration when calculating epsilon. The authors used bounded and unbounded sensitivity (although back then apparently were not referred to them as such) to find a tight bound for epsilon with binary search.
