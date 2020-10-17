@@ -6,7 +6,7 @@ This paper states that even though Differential Privacy (DP) protects any indivi
 
 My humble opinion is that the paper is succinct, elegant and it has the ability to take your understanding of DP further. I would like to thank the authors **Jaewoo Lee** and **Chris Clifton** for these two days I spent implementing :) and I invite everyone to have a look at the paper and check the code if you want to understand it better.
 
-**Contributions and findin of this notebook:**
+**Contributions and findings of this notebook:**
 	
 1. I coded a function that calculates the bounded and unbounded sensitivity of a dataset formed by numeric columns. Probably it will not scale well (as it must calculate all the possible neighboring datasets given a universe of values), but you can validate any formula that claims to calculate the sensitivity for a specific query. However, how to code the algorithm was not explained in the paper. The function also allows you to vary the hamming distance and see how that affects the sensitivity and therefore the noise (It increases, but that is known as the definition for DP goes: P(M(x) = O) <= P(M(x') = O) * exp(epsilon) * hamming_distance).
 2. i.e.: This function to empirically calculate the sensitivity creates all possible neighboring datasets, with k less or more records (for unbounded DP) and with the same amount of records but changing k values (bounded DP). Where k is the hamming distance. The function calculates the query result for each possible neighboring dataset, then calculates all possible L1 norms, and then chooses the max.
