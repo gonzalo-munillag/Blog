@@ -15,6 +15,6 @@ Cheers!
 
 | category | date | title |
 |:-------|:-----|:------|
-| Extant Paper Implementation | 2020-10-17 | (Choosing epsilon)[https://github.com/gonzalo-munillag/Differential_Privacy/tree/main/Extant_Papers_Implementations/A_method_to_choose_epsilon]
+| Extant Paper Implementation | 2020-10-17 | [Choosing epsilon](https://github.com/gonzalo-munillag/Differential_Privacy/tree/main/Extant_Papers_Implementations/A_method_to_choose_epsilon)
 
 
