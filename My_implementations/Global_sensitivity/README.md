@@ -63,4 +63,8 @@ Limitations:
 <a name="results"></a>
 # Results
 
+![unbounded_a](unbounded_a.png)
+![bounded_a](bounded_a.png)
 
+![unbounded_b](unbounded_b.png)
+![bounded_b](bounded_b.png)
