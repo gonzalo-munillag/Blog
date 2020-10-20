@@ -1,5 +1,9 @@
+# Goal
+
 The goal of this notebook is to showcase 2 functions, one that implements sensitivity based on the unbounded differential privacy (DP) definition, and another that implements sensitivity based on a bounded definition.
 I am not aiming for efficiency but for a deeper understanding of how to implement sensitivity empirically from scratch.
+
+## Background
 
 Before continuing there needs to be some clarifications:
 In bounded DP, the neighboring dataset is built by changing the records of the dataset (not adding to removing records). E.g. x = {1, 2, 3} (|x|=3) with universe X = {1, 2, 3, 4}, a neighboring dataset in this case would be: x' = {1, 2, 4} (|x'| = 3). They have the same cardinality.
@@ -21,11 +25,21 @@ I have not come across an intuition for having a larger hamming distance (please
 
 I am however far from certain of my hypothesis for the intuition behind a larger hamming distance.
 
-**Contributions**:
+## Contributions of the notebook
 1. I programmed a function that calculates the bounded and unbounded sensitivity of a dataset formed by numeric columns- Additionally, it allows you to vary the hamming distance. Its empirical nature will not allow it to scale well, i.e., the function creates all possible neighboring datasets, with k less or more records (for unbounded DP) and with the same amount of records but changing k values (bounded DP). Where k is the hamming distance. The function calculates the query result for each possible neighboring dataset, then calculates all possible L1 norms, and then chooses the maximum. That will be the sensitivity defined in DP.
 2. The sensitivity can be calculated for most of the basic queries: mean, median, percentile, sum, var, std, count*.
 
-I tried for differente domains, bounded and unbounded sensitivities, different hamming distances. If oyu are impatient, you can go directly to the [results](#results)
+I tried for differente domains, bounded and unbounded sensitivities, different hamming distances. If you are impatient, you can go directly to the [results](#results). 
+
+## Conclusions from results
+
+1. Increasing the hamming distance will increase the sensitivities, it makes sense as the larger the amount of elements you can include, the more outliers will be present in the neighboring datasets, increasing the L1 norm. 
+2. This increase in sensitivitiy in turn will increase the noise added. Whether this is helpful or unhelpful (as the hamming distance multiplies the chosen epsilon in the defintion of DP), needs further study. On the one hand, having a larger hamming distance will make the probability ratio more distinguishable (undesirable), but at the same time, the randomized mechanisms will contain more noise.
+3. Bounded sensitivities are smaller than unbounded ones.
+4. Bounded sensitivities are more taxing to compute than unbounded ones, but that might be because of how I implemented the functions.
+5. Sensitivities in general seem to either plateau, have a logarithmic behaviour or linear. However, this is a large leap of faith as the number of samples is very small.
+
+## Use case and considerations
 
 I have differentiated between 2 cases:
 1. (a) The universe of possible values is based on a dataset, and the size of the released dataset is known before release, i.e. the cardinality of the universe subset. This scenario could be e.g. releasing a study based on some students out of all the students at a school. (Note: the dataset to be released cannot be larger than the dataset used for the universe, only equal or smaller).
@@ -43,18 +57,19 @@ For this notebook, we will consider Scenario (a) + (off) and (b) + (off).
 
 Also note that (a) and (b) is also somewhat different to local DP (LDP) (DP applied on the device, usually randomized response) versus global DP (GDP) (the third party trusted with all the data, allows for other algorithms). This notebook is focused on GDP. So we have (a) + (off) + (GDP) and (b) + (off) + (GDP). 
 
-Mean questions for clarification: 
+## Mean questions for clarification: 
 - How can (b) and (GDP) go together? The third-party can host a server to process real-time data. 
 - Then, why does not the third party aggregate this real-time data and do (a) instead of (b)? It could, but because your dataset is ever-growing, you would need to compute sensitivities every time your dataset would change, which is in real-time, that can be computationally inefficient. 
 - But still, you could do (a), right? You could, but you would have to release data over a defined period and release a synopsis aggregating these data. Thus, your service would not be as close to real-time anymore as it would be with (b). But definitively, it is a question to further investigate.
 - So what is the major benefit of (b)? You do not need to re-compute your sensitivities, the drawback is that if your domain of possible values is very large then your noise will be larger. In (a) your universe might not contain such wide possible ranges, so it benefits your accuracy. But you can also fine-tune your range in D_universe_b based on an older sample of D_release_b. **But definitively you would like to calculate your sensitivities in case b with an upper bound found theoretically, as finding it empirically is computationally expensive**
 - Mmm, and what if you do not know the full domain of your universe? That is indeed a good question. Well, then you will have to do some clipping to not get any surprises. E.g., if you defined your universe like D_universe_b = {'Age': [1, 2, ..., 99, 100]}, but you get a value in real-time like [122](https://en.wikipedia.org/wiki/List_of_the_verified_oldest_people), then you should do top-coding, 122->100, so you can include its value. Outliers and DP do not go well. You can protect them, but the cost would be too high (higher noise), and why would you do that? DP allows you to perform statistical queries, the mean or the sum would not be representative of the population if there are outliers in it. DP is used to learn from a population, not from outliers, if you would like to learn about outliers, then DP is not for you. 
 
+### Further clarification
 The main difference in this notebook between scenario a and b (aside from the one mentioned), is programmatic: How you define the universe to input into the functions. The functions I created (for the sensitivities in unbounded and bounded DP) serve both scenarios. But in scenario b, aside from the fact that you have only a range of values, to calculate the sensitivity, you have to make as many replicates of each value of the universe as the size of the released dataset. Why? Because if you define your range like e.g. D_universe_b = {'Age': [1, 2, ..., 99, 100]} and with a |D_release| = 4, you could on real-time get a D_release_b={'Age':[100,100,100,100]} or another like D_release_b={'Age':[35, 35, 35, 35]}.
 
 Something to also note is that the functions that calculate the sensitivities only need a universe and the size of the released dataset (together with the hamming distance). They do not need the actual release dataset, which could be a possibility.
 
-Limitations:
+### Limitations:
 1. The functions to calculate sensitivity do not scale well in terms of the size of your universe
 2. *****The count query sensitivity should be 1 for unbounded and 2 for bounded DP. The former is clear because you just add or remove one record, increasing or decreasing the total count of the record by one. However, if you have bounded sensitivity, the change of one record might lead to the decrease of the count of one record and the increase of the count of another, yielding a total difference of 2. These 2 cases are not accounted for, we solely count the number of elements in the array, which leads to a sensitivity of 1 in unbounded and of 0 inbounded. To empirically prove the fact that for bounded you have a sensitivity of 2, there needs to be more work done on how the query results are handled, which is a lot of extra workload for obtaining a solution that is already well known.**
 
