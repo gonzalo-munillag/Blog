@@ -13,7 +13,7 @@ Cheers!
 
 | category | topic | date | title |
 |:-------|:-----|:-----|:------|
-|Implemetation|Differential Privacy|2020-10-21| [Global Sensitivity](https://github.com/gonzalo-munillag/Blog/tree/main/My_implementations/Global_sensitivity)
+|Implemetation|Differential Privacy|2020-10-21| [Empirical implementation of Global Sensitivity form scratch](https://github.com/gonzalo-munillag/Blog/tree/main/My_implementations/Global_sensitivity)
 | Extant Paper Implementation | Differential Privacy |2020-10-17 | [How much is enough? Choosing epsilon for Differential Privacy](https://github.com/gonzalo-munillag/Differential_Privacy/tree/main/Extant_Papers_Implementations/A_method_to_choose_epsilon)
 | Publication | Blockchain | 2020-07-02| [A Blockchain-based Flexibility Market Platform for EV Fleets](https://ieeexplore.ieee.org/document/9131332/metrics#metrics)
 | Publication | Privacy | 2020-06-04 | [Towards a Privacy-Enhancing Tool Based on De- Identification Methods](https://aisel.aisnet.org/pacis2020/157/)
