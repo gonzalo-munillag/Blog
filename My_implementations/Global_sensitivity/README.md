@@ -25,6 +25,8 @@ I am however far from certain of my hypothesis for the intuition behind a larger
 1. I programmed a function that calculates the bounded and unbounded sensitivity of a dataset formed by numeric columns- Additionally, it allows you to vary the hamming distance. Its empirical nature will not allow it to scale well, i.e., the function creates all possible neighboring datasets, with k less or more records (for unbounded DP) and with the same amount of records but changing k values (bounded DP). Where k is the hamming distance. The function calculates the query result for each possible neighboring dataset, then calculates all possible L1 norms, and then chooses the maximum. That will be the sensitivity defined in DP.
 2. The sensitivity can be calculated for most of the basic queries: mean, median, percentile, sum, var, std, count*.
 
+I tried for differente domains, bounded and unbounded sensitivities, different hamming distances. If oyu are impatient, you can go directly to the [results](#results)
+
 I have differentiated between 2 cases:
 1. (a) The universe of possible values is based on a dataset, and the size of the released dataset is known before release, i.e. the cardinality of the universe subset. This scenario could be e.g. releasing a study based on some students out of all the students at a school. (Note: the dataset to be released cannot be larger than the dataset used for the universe, only equal or smaller).
 2. (b) The universe of possible values is based on a range of values, and the size of the released dataset is known before release. A range is used because the exact values that could potentially be released are not known in advance, thus a range where those values could fall into must be used to perform the sensitivity calculation. This scenario could be e.g. releasing real-time DP results from an IoT device. 
@@ -57,3 +59,8 @@ Limitations:
 2. *****The count query sensitivity should be 1 for unbounded and 2 for bounded DP. The former is clear because you just add or remove one record, increasing or decreasing the total count of the record by one. However, if you have bounded sensitivity, the change of one record might lead to the decrease of the count of one record and the increase of the count of another, yielding a total difference of 2. These 2 cases are not accounted for, we solely count the number of elements in the array, which leads to a sensitivity of 1 in unbounded and of 0 inbounded. To empirically prove the fact that for bounded you have a sensitivity of 2, there needs to be more work done on how the query results are handled, which is a lot of extra workload for obtaining a solution that is already well known.**
 
 ***** If the number of users/IoT devices is desired to be protected, then one can take a large sample of records, but not all the records, and the cardinality considered would be the number of the sampled records. Thus an attacker would not know the actual number of users/IoT devices.
+
+<a name="results"></a>
+# Results
+
+
