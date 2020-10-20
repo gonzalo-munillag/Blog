@@ -36,10 +36,10 @@ This is the plot I replicated faithfully from the paper:
 
 ![Fig_2](Images/Fig_2.png)
 
-I applied binary searcg and found the optimal values of epsilon. Have a look:
+I applied binary search and found the optimal values for epsilon. Have a look:
 ![Fig_2_zoom](Images/Fig_2_zoom.png)
 
-I went an extra step and also plotted the median and found the optimal values for epsilon. here is the result:
+I went a step further and also plotted the median and found the optimal values for epsilon. here is the result:
 
 ![fig_median](Images/fig_median.png)
 
