@@ -1,6 +1,8 @@
+# Choosing Epsilon for Differential Privacy
+
 ## Goal
 
-The goal of this notebook is to implement the following paper from 2011 with around 20 citations: [link to pdf](https://git.gnunet.org/bibliography.git/plain/docs/Choosing-%CE%B5-2011Lee.pdf), [link to Springer Link](https://link.springer.com/chapter/10.1007/978-3-642-24861-0_22)
+The goal of this notebook is to implement the following paper from 2011 with around 20 citations, ***How Much Is Enough? Choosing Epsilon for Differential Privacy***: [link to pdf](https://git.gnunet.org/bibliography.git/plain/docs/Choosing-%CE%B5-2011Lee.pdf), [link to Springer Link](https://link.springer.com/chapter/10.1007/978-3-642-24861-0_22)
 
 ## Paper summary
 
@@ -12,6 +14,8 @@ My humble opinion is that the paper is succinct, elegant and it has the ability 
 The notebook allows you to expand and test the approach of the paper for different queries. They plot the mean query, but I also plotted the median query. I encourage you to get the code and plot e.g. the variance query.
 
 ## Notebook contributions
+
+[Notebook](https://github.com/gonzalo-munillag/Blog/blob/main/Extant_Papers_Implementations/A_method_to_choose_epsilon/How_much_is_enough_Calculating_An_Optimal_Epsilon.ipynb)
 
 1. I coded a function that calculates the bounded and unbounded sensitivity of a dataset formed by numeric columns. However, how to code the algorithm was not explained in the paper. You can also vary the hamming distance in the function. You can check a more detail view of these function in this other of my [blog posts](https://github.com/gonzalo-munillag/Blog/tree/main/My_implementations/Global_sensitivity)
 1. a. i.e.: This function to empirically calculate the sensitivity creates all possible neighboring datasets, with k less or more records (for unbounded DP) and with the same amount of records but changing k values (bounded DP). Where k is the hamming distance. The function calculates the query result for each possible neighboring dataset, then calculates all possible L1 norms, and then chooses the max.
