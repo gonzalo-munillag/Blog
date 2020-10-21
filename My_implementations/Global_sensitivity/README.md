@@ -1,7 +1,11 @@
-# Goal
+# Global Sensitivity From Sratch
+
+## Goal
 
 The goal of this notebook is to showcase 2 functions, one that implements sensitivity based on the unbounded differential privacy (DP) definition, and another that implements sensitivity based on a bounded definition.
 I am not aiming for efficiency but for a deeper understanding of how to implement sensitivity empirically from scratch.
+
+[Notebook](https://github.com/gonzalo-munillag/Blog/blob/main/My_implementations/Global_sensitivity/Global_Sensitivity.ipynb)
 
 ## Background
 
@@ -26,6 +30,7 @@ I have not come across an intuition for having a larger hamming distance (please
 I am however far from certain of my hypothesis for the intuition behind a larger hamming distance.
 
 ## Contributions of the notebook
+
 1. I programmed a function that calculates the bounded and unbounded sensitivity of a dataset formed by numeric columns- Additionally, it allows you to vary the hamming distance. Its empirical nature will not allow it to scale well, i.e., the function creates all possible neighboring datasets, with k less or more records (for unbounded DP) and with the same amount of records but changing k values (bounded DP). Where k is the hamming distance. The function calculates the query result for each possible neighboring dataset, then calculates all possible L1 norms, and then chooses the maximum. That will be the sensitivity defined in DP.
 2. The sensitivity can be calculated for most of the basic queries: mean, median, percentile, sum, var, std, count*.
 
