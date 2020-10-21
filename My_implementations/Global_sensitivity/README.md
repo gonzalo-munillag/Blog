@@ -78,8 +78,8 @@ Something to also note is that the functions that calculate the sensitivities on
 <a name="results"></a>
 # Results
 
-![unbounded_a](unbounded_a.png)
-![bounded_a](bounded_a.png)
+![unbounded_a](Images/unbounded_a.png)
+![bounded_a](Images/bounded_a.png)
 
-![unbounded_b](unbounded_b.png)
-![bounded_b](bounded_b.png)
+![unbounded_b](Images/unbounded_b.png)
+![bounded_b](Images/bounded_b.png)
