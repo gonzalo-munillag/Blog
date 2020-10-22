@@ -32,7 +32,7 @@ I invite you to have a look at them as well :)
 
 ### Results
 
-You can see the comparisons of the plots between local and global sensitivities.
+You can see the comparisons of the plots between local and global sensitivities. (Ignore the decimals on the x axis, hamming distances are integers)
 
 #### Local (i)
 
