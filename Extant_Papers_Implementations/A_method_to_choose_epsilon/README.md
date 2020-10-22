@@ -40,7 +40,7 @@ This is the plot I replicated faithfully from the paper:
 ![Fig_2](Images/Fig_2.png)
 
 I applied a binary search and found the optimal values for epsilon. Have a look:
-![Fig_2_zoom](Images/Fig_2_zoom.png)
+![Fig_2_zoom](Images/Fig_zoom.png)
 
 I went a step further and also plotted the median and found the optimal values for epsilon. here is the result:
 
