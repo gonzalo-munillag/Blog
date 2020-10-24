@@ -40,7 +40,7 @@ I tried for differente domains, bounded and unbounded sensitivities, different h
 
 1. Increasing the hamming distance will increase the sensitivities, it makes sense as the larger the amount of elements you can include, the more outliers will be present in the neighboring datasets, increasing the L1 norm. 
 2. This increase in sensitivitiy in turn will increase the noise added. Whether this is helpful or unhelpful (as the hamming distance multiplies the chosen epsilon in the defintion of DP), needs further study. On the one hand, having a larger hamming distance will make the probability ratio more distinguishable (undesirable), but at the same time, the randomized mechanisms will contain more noise.
-3. Bounded sensitivities are smaller than unbounded ones. This leads to the question of: Why would we use the unbounded DP if iut provides the same guarantees with more noise? Perhaps my experiemnt is too small, [contact](https://www.linkedin.com/in/gonzalo-munilla/) me if you know the answer :)
+3. Bounded sensitivities seem smaller than unbounded ones. But that is not always the case, you can check in the example given in the next [blog post](https://github.com/gonzalo-munillag/Blog/tree/main/My_implementations/Local_sensitivity), where I give visual example on how sensitivities are caluclated.
 4. Bounded sensitivities are more taxing to compute than unbounded, but that might be because of how I implemented the functions.
 5. Sensitivities in general seem to either plateau, have a logarithmic behaviour or linear. However, this is a large leap of faith as the number of samples is very small.
 
