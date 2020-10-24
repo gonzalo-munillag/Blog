@@ -45,6 +45,7 @@ For the visual representation, we have chosen:
 - x are all the possible value combinations from X
 - x' are all the possible neighbors for each x
 - Neighbor's cardinality difference is set to the hamming distance of 1, | |x| - |x'| | = 1
+- The L1 norm is calculated with the Query(Median) result of the possible release dataset (on the 2nd column) and with each of the Query(Median) results of each of the types of neighboring datasets.
 - I select the first maximum for each group of L1 norms.
 
 In this case, unlike in the previous blog post(), the bounded sensitivity of value 8 is higher that the unbounded ones of values 4.5 and 4, for subtracting and adding a record respectively. 
