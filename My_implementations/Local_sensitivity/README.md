@@ -54,10 +54,7 @@ Notice the local sensitivities are calculated on the horizontal axis, there is o
 
 General form of L1 sensitivity:
 
-![formula](https://render.githubusercontent.com/render/math?math=\Delta f=\max_{\substack{
-   {x, y \in \mathbb{R}^{\mathcal{n}}} \\
-   d(x,y)=1
-  }} \|f(x)-f(y)\|_{1} \)
+![formula](https://render.githubusercontent.com/render/math?math=\Deltaf=\max_{\substack{{x,y\in\mathbb{R}^{\mathcal{n}}}\\d(x,y)=1}}\|f(x)-f(y)\|_{1}\)
 
 ![sensitivities_median_manual_calculations](Images/sensitivities_median_manual_calculations.png)
 
