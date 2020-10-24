@@ -54,11 +54,11 @@ Notice the local sensitivities are calculated on the horizontal axis, there is o
 
 General form of L1 unbounded sensitivity:
 
-![unbounded_sensitivity_formula](Images/unbounded_sensitivity_formula.png =500x100)
+![unbounded_sensitivity_formula](Images/unbounded_sensitivity_formula.png)
 
 General form of L1 bounded sensitivity:
 
-![bounded_sensitivity_formula](Images/bounded_sensitivity_formula.png =500x100)
+![bounded_sensitivity_formula](Images/bounded_sensitivity_formula.png)
 
 ![sensitivities_median_manual_calculations](Images/sensitivities_median_manual_calculations.png)
 
