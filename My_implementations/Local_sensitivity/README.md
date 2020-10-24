@@ -22,6 +22,7 @@ Note: Unbounded sensitivity can be achieved in 2 ways, either by adding or subtr
 
 1. Two functions to calculate the local sensitivity of a dataset empirically.
 2. Comparisons between local and global sensitivity results.
+3. A visualization of sensitivities for a median query, with the goal to show how to calclate sensitivities locally and how bounded and unbounded sensitivity differ visually
 
 ### Mean questions for clarification
 - If local sensitivity would imply less noise due to its smaller value, then why do we not always use local sensitvity?  If for each dataset you would calculate its particular loca sensitvity, then adversary could also take that into consideration when plotting noise distributions of the different possible dataset release combinations. These distributions would have a lower std, and thus, once the adversary gets a query DP result, it would be easier for him/her to discard possible release datasets (A visual representation of this process carried out by an attacker is in the [paper](https://git.gnunet.org/bibliography.git/plain/docs/Choosing-%CE%B5-2011Lee.pdf) I implemented 2 blog posts ago, depicted in Figs. 1 and 3). That is why some researchers invented smooth bounds for local sensitivities, but that is something I will cover in future blog posts.
@@ -36,6 +37,23 @@ I invite you to have a look at them as well :)
 ### Results
 
 You can see the comparisons of the plots between local and global sensitivities. (Ignore the decimals on the x axis, hamming distances are integers)
+
+For the visual representation, we have chosen:
+- Universe of possible values: X = {1, 2, 3, 10, 11}
+- Release dataset size = 3
+- Hamming distance = 1
+- x are all the possible value combinations from X
+- x' are all the possible neighbors for each x
+- Neighbor's cardinality difference is set to the hamming distance of 1, | |x| - |x'| | = 1
+- I select the first maximum for each group of L1 norms.
+
+In this case, unlike in the previous blog post(), the bounded sensitivity of value 8 is higher that the unbounded ones of values 4.5 and 4, for subtracting and adding a record respectively. 
+
+Notice the local sensitivities are calculated on the horizontal axis, there is one per possible release dataset (first column). The global sensitivity is calculated in the vertical axis, selecting the maximum value out of all the L1 norms, i.e. slecting the maximum out of all local sensitivities.
+
+![sensitivities_median_manual_calculations](Images/sensitivities_median_manual_calculations.png)
+
+**Here come the figures!**
 
 #### Local (i)
 
