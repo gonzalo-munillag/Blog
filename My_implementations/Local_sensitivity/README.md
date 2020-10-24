@@ -52,9 +52,13 @@ In this case, unlike in the previous blog post(), the bounded sensitivity of val
 
 Notice the local sensitivities are calculated on the horizontal axis, there is one per possible release dataset (first column). The global sensitivity is calculated in the vertical axis, selecting the maximum value out of all the L1 norms, i.e. slecting the maximum out of all local sensitivities.
 
-General form of L1 sensitivity:
+General form of L1 unbounded sensitivity:
 
-![formula](https://render.githubusercontent.com/render/math?math=\Deltaf=\max_{\substack{{x,y\in\mathbb{R}^{\mathcal{n}}}\\d(x,y)=1}}\|f(x)-f(y)\|_{1}\)
+![unbounded_sensitivity_formula](Images/unbounded_sensitivity_formula.png =50x10)
+
+General form of L1 bounded sensitivity:
+
+![bounded_sensitivity_formula](Images/bounded_sensitivity_formula.png =50x10)
 
 ![sensitivities_median_manual_calculations](Images/sensitivities_median_manual_calculations.png)
 
