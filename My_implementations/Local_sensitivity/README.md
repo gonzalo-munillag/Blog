@@ -40,7 +40,7 @@ You can see the comparisons of the plots between local and global sensitivities.
 
 For the visual representation, we have chosen:
 - Universe of possible values: X = {1, 2, 3, 10, 11}
-- Release dataset size = 3
+- Release dataset size (cardinality) = 3
 - Hamming distance = 1
 - x are all the possible value combinations from X
 - x' are all the possible neighbors for each x
