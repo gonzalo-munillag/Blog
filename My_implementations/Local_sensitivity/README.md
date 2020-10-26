@@ -81,8 +81,6 @@ The rest have lower values. This means that this particular dataset is the one w
 
 #### BOUNDED - Local Sensitivity
 
-#### Local (ii)
-
 ![bounded_sensitivity_plot](Images/bounded_sensitivity_plot.png)
 
 ##### Vs.
@@ -90,3 +88,5 @@ The rest have lower values. This means that this particular dataset is the one w
 #### BOUNDED - Global Sensitivity
 
 ![bounded_a](Images/bounded_a.png)
+
+At a first glance, the bounded local and global seem equal, but if you pay close attention, for some queries they are not.
