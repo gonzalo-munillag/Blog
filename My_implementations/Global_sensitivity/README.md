@@ -44,7 +44,7 @@ I tried for differente domains, bounded and unbounded sensitivities, different h
 4. Bounded sensitivities are more taxing to compute than unbounded, but that might be because of how I implemented the functions.
 5. Sensitivities in general seem to either plateau, have a logarithmic behaviour or linear. However, this is a large leap of faith as the number of samples is very small.
 
-Note: Unbounded sensitivity can be achieved in 2 ways, either by adding or subtracting records. In this notebook I computed both at the same time and chose the one that yielded the highest sensitivity. However, I would say that in a real scenario, you could take either and calculate the sensitivity, as both equally protect the privacy of the individuals in the records. However, it is true that for the same privacy guarantees, one might use less noise than the other. This is an object for discussion.
+**Note: Unbounded sensitivity can be achieved in 2 ways, either by adding or subtracting records. In this notebook I computed both at the same time and chose the one that yielded the highest sensitivity. However, I would say that in a real scenario, you could take either and calculate the sensitivity, as both equally protect the privacy of the individuals in the records. However, it is true that for the same privacy guarantees, one might use less noise than the other. This is an object for discussion.**
 
 Note: these conclusions have been drawn from a set of experiemnts, it sets ground for hypothesis but to assert the conclusions we would need to prove them theoretically.
 
