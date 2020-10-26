@@ -64,6 +64,8 @@ General form of L1 bounded sensitivity:
 
 **Here come the figures!**
 
+**(Ignore the decimals on the x axis, hamming distances are integers)**
+
 #### Local (i)
 
 ![bunounded_sensitivity_plot](Images/unbounded_sensitivity_plot.png)
