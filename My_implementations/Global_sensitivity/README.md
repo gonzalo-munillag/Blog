@@ -1,4 +1,4 @@
-# Global Sensitivity From Sratch
+# Global Sensitivity From Scratch
 
 ## Goal
 
@@ -21,11 +21,11 @@ P(M(x) = O) = P(M(x') = O) * exp(epsilon * |x ⊖ x'|)
 
 Where M is a randomized computation, x a dataset, x' its neighbor at hamming distance k = |x ⊖ x'|, and O an output of M given x and x'. 
 
-k is usually 1, to the best of my knowledge, because one aims to protect one individual in the dataset, and by definition, each individual within would therefore be protected. By making the probabilities of obtaining an output O similar betwen two datasets that differ only only in 1 record, one is successfully cloaking the real value of O and therefore not updating fully the knowledge of the adversary, which if done properly, would still be 50/50 between wich dataset was actually the real one. 
+k is usually 1, to the best of my knowledge, because one aims to protect one individual in the dataset, and by definition, each individual within would therefore be protected. By making the probabilities of obtaining an output O similar between two datasets that differ only in 1 record, one is successfully cloaking the real value of O and therefore not updating fully the knowledge of the adversary, which if done properly, would still be 50/50 between wich dataset was actually the real one. 
 
-Looking at the defintino of DP, the higher your k, the more you would increase exp(.), which means that the difference between the probabilities to obtain those outputs will be larger, and thus your privacy would not be equally conserved (although sensitivities increase with k as you can see in the plots).
+Looking at the definition of DP, the higher your k, the more you would increase exp(.), which means that the difference between the probabilities to obtain those outputs will be larger, and thus your privacy would not be equally conserved (although sensitivities increase with k as you can see in the plots).
 
-I have not come across an intuition for having a larger hamming distance (please feel free to [connect](https://www.linkedin.com/in/gonzalo-munilla/) if you have an explanation). Looking at the previous paragraph, it would seem as if having a hamming distance of k=2 would aim to protect pairs of records (individuals), i.e. it accounts for the fact that there are dependencies between records in the dataset that need to be considered as they increase the probability ratio (undesirable). It could make sense if there are some binary relationship between records, e.g. pairs of siblings, or n-ary relationships for k=n, e.g. in a social network. 
+I have not come across an intuition for having a larger hamming distance (please feel free to [connect](https://www.linkedin.com/in/gonzalo-munilla/) if you have an explanation). Looking at the previous paragraph, it would seem as if having a hamming distance of k=2 would aim to protect pairs of records (individuals), i.e. it accounts for the fact that there are dependencies between records in the dataset that need to be considered as they increase the probability ratio (undesirable). It could make sense if there are some binary relationships between records, e.g. pairs of siblings, or n-ary relationships for k=n, e.g. in a social network. 
 
 I am however far from certain of my hypothesis for the intuition behind a larger hamming distance.
 
@@ -34,19 +34,19 @@ I am however far from certain of my hypothesis for the intuition behind a larger
 1. I programmed a function that calculates the bounded and unbounded sensitivity of a dataset formed by numeric columns- Additionally, it allows you to vary the hamming distance. Its empirical nature will not allow it to scale well, i.e., the function creates all possible neighboring datasets, with k less or more records (for unbounded DP) and with the same amount of records but changing k values (bounded DP). Where k is the hamming distance. The function calculates the query result for each possible neighboring dataset, then calculates all possible L1 norms, and then chooses the maximum. That will be the sensitivity defined in DP.
 2. The sensitivity can be calculated for most of the basic queries: mean, median, percentile, sum, var, std, count*.
 
-I tried for differente domains, bounded and unbounded sensitivities, different hamming distances. If you are impatient, you can go directly to the [results](#results). 
+I tried for different domains, bounded and unbounded sensitivities, different hamming distances. If you are impatient, you can go directly to the [results](#results). 
 
 ## Conclusions from results
 
-1. Increasing the hamming distance will increase the sensitivities, it makes sense as the larger the amount of elements you can include, the more outliers will be present in the neighboring datasets, increasing the L1 norm. 
-2. This increase in sensitivitiy in turn will increase the noise added. Whether this is helpful or unhelpful (as the hamming distance multiplies the chosen epsilon in the defintion of DP), needs further study. On the one hand, having a larger hamming distance will make the probability ratio more distinguishable (undesirable), but at the same time, the randomized mechanisms will contain more noise.
-3. Bounded sensitivities seem smaller than unbounded ones. But that is not always the case, you can check in the example given in the next [blog post](https://github.com/gonzalo-munillag/Blog/tree/main/My_implementations/Local_sensitivity), where I give visual example on how sensitivities are caluclated.
+1. Increasing the hamming distance will increase the sensitivities, it makes sense as the larger the number of elements you can include, the more outliers will be present in the neighboring datasets, increasing the L1 norm. 
+2. This increase in sensitivity in turn will increase the noise added. Whether this is helpful or unhelpful (as the hamming distance multiplies the chosen epsilon in the definition of DP), needs further study. On the one hand, having a larger hamming distance will make the probability ratio more distinguishable (undesirable), but at the same time, the randomized mechanisms will contain more noise.
+3. Bounded sensitivities seem smaller than unbounded ones. But that is not always the case, you can check in the example given in the next [blog post](https://github.com/gonzalo-munillag/Blog/tree/main/My_implementations/Local_sensitivity), where I give a visual example of how sensitivities are calculated.
 4. Bounded sensitivities are more taxing to compute than unbounded, but that might be because of how I implemented the functions.
-5. Sensitivities in general seem to either plateau, have a logarithmic behaviour or linear. However, this is a large leap of faith as the number of samples is very small.
+5. Sensitivities, in general, seem to either plateau, have a logarithmic behavior, or linear. However, this is a large leap of faith as the number of samples is very small.
 
-**Note: Unbounded sensitivity can be achieved in 2 ways, either by adding or subtracting records. In this notebook I computed both at the same time and chose the one that yielded the highest sensitivity. However, I would say that in a real scenario, you could take either and calculate the sensitivity, as both equally protect the privacy of the individuals in the records. However, it is true that for the same privacy guarantees, one might use less noise than the other. This is an object for discussion.**
+**Note: Unbounded sensitivity can be achieved in 2 ways, either by adding or subtracting records. In this notebook, I computed both at the same time and chose the one that yielded the highest sensitivity. However, I would say that in a real scenario, you could take either and calculate the sensitivity, as both equally protect the privacy of the individuals in the records. However, it is true that for the same privacy guarantees, one might use less noise than the other. This is an object for discussion.**
 
-Note: these conclusions have been drawn from a set of experiemnts, it sets ground for hypothesis but to assert the conclusions we would need to prove them theoretically.
+Note: these conclusions have been drawn from a set of experiments, it sets the ground for hypothesis but to assert the conclusions we would need to prove them theoretically.
 
 ## Use case and considerations
 
@@ -70,7 +70,7 @@ Also note that (a) and (b) is also somewhat different to local DP (LDP) (DP appl
 - How can (b) and (GDP) go together? The third-party can host a server to process real-time data. 
 - Then, why does not the third party aggregate this real-time data and do (a) instead of (b)? It could, but because your dataset is ever-growing, you would need to compute sensitivities every time your dataset would change, which is in real-time, that can be computationally inefficient. 
 - But still, you could do (a), right? You could, but you would have to release data over a defined period and release a synopsis aggregating these data. Thus, your service would not be as close to real-time anymore as it would be with (b). But definitively, it is a question to further investigate.
-- So what is the major benefit of (b)? You do not need to re-compute your sensitivities, the drawback is that if your domain of possible values is very large then your noise will be larger. In (a) your universe might not contain such wide possible ranges, so it benefits your accuracy. But you can also fine-tune your range in D_universe_b based on an older sample of D_release_b. **But definitively you would like to calculate your sensitivities in case b with an upper bound found theoretically, as finding it empirically is computationally expensive**
+- So what is the major benefit of (b)? You do not need to re-compute your sensitivities, the drawback is that if your domain of possible values is very large then your noise will be larger. In (a) your universe might not contain such wide possible ranges, so it benefits your accuracy. But you can also fine-tune your range in D_universe_b based on an older sample of D_release_b. **But definitively you would like to calculate your sensitivities in case of (b) with an upper bound found theoretically, as finding it empirically is computationally expensive**
 - Mmm, and what if you do not know the full domain of your universe? That is indeed a good question. Well, then you will have to do some clipping to not get any surprises. E.g., if you defined your universe like D_universe_b = {'Age': [1, 2, ..., 99, 100]}, but you get a value in real-time like [122](https://en.wikipedia.org/wiki/List_of_the_verified_oldest_people), then you should do top-coding, 122->100, so you can include its value. Outliers and DP do not go well. You can protect them, but the cost would be too high (higher noise), and why would you do that? DP allows you to perform statistical queries, the mean or the sum would not be representative of the population if there are outliers in it. DP is used to learn from a population, not from outliers, if you would like to learn about outliers, then DP is not for you. 
 
 ### Further clarification
@@ -87,7 +87,7 @@ Something to also note is that the functions that calculate the sensitivities on
 <a name="results"></a>
 # Results
 
-**(Ignore the decimals on the x axis, hamming distances are integers)**
+**(Ignore the decimals on the x-axis, hamming distances are integers)**
 
 ![unbounded_a](Images/unbounded_a.png)
 ![bounded_a](Images/bounded_a.png)
