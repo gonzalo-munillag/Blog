@@ -69,7 +69,7 @@ General form of L1 bounded sensitivity:
 #### UNBOUNDED
 #### Local (i)
 
-![bunounded_sensitivity_plot](Images/unbounded_sensitivity_plot.png)
+![unbounded_sensitivity_plot](Images/unbounded_sensitivity_plot.png)
 
 It is interesting to see that the sensitivity for variance declines and at least for the sum the local sensitivity seems to be equal to the global sensitivity. 
 The rest have lower values. This means that this particular dataset is the one with the maximum sensitivity for sum. 
