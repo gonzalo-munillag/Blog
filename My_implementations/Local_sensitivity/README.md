@@ -14,7 +14,7 @@ This means that you only calculate the neighbors of the release dataset, and not
 And it is only within these neighbors and their corresponding release dataset that you find the maximum norm. 
 Global sensitibvity is therefore an upper bound of local sensitivity. 
 
-Note: Unbounded sensitivity can be achieved in 2 ways, either by adding or subtracting records. In this notebook I computed both at the same time and chose the one that yielded the highest sensitivity. However, I would say that in a real scenario, you could take either and calculate the sensitivity, as both equally protect the privacy of the individuals in the records. However, it is true that for the same privacy guarantees, one might use less noise than the other. This is an object for discussion.
+**Note: Unbounded sensitivity can be achieved in 2 ways, either by adding or subtracting records. In this notebook I computed both at the same time and chose the one that yielded the highest sensitivity. However, I would say that in a real scenario, you could take either and calculate the sensitivity, as both equally protect the privacy of the individuals in the records. However, it is true that for the same privacy guarantees, one might use less noise than the other. This is an object for discussion.**
 
 
 ### Contributions of notebook
