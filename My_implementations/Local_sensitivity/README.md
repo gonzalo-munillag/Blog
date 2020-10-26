@@ -66,8 +66,7 @@ General form of L1 bounded sensitivity:
 
 **(Ignore the decimals on the x axis, hamming distances are integers)**
 
-#### UNBOUNDED
-#### Local (i)
+#### UNBOUNDED - Local Sensitivity
 
 ![unbounded_sensitivity_plot](Images/unbounded_sensitivity_plot.png)
 
@@ -76,11 +75,11 @@ The rest have lower values. This means that this particular dataset is the one w
 
 ##### Vs.
 
-#### Global (i)
+#### UNBOUNDED - Global Sensitivity
 
 ![unbounded_a](Images/unbounded_a.png)
 
-#### BOUNDED
+#### BOUNDED - Local Sensitivity
 
 #### Local (ii)
 
@@ -88,6 +87,6 @@ The rest have lower values. This means that this particular dataset is the one w
 
 ##### Vs.
 
-#### global (ii)
+#### BOUNDED - Global Sensitivity
 
 ![bounded_a](Images/bounded_a.png)
