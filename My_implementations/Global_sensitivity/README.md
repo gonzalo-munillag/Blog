@@ -87,7 +87,7 @@ Something to also note is that the functions that calculate the sensitivities on
 <a name="results"></a>
 # Results
 
-(Ignore the decimals on the x axis, hamming distances are integers)
+**(Ignore the decimals on the x axis, hamming distances are integers)**
 
 ![unbounded_a](Images/unbounded_a.png)
 ![bounded_a](Images/bounded_a.png)
