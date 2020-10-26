@@ -89,4 +89,4 @@ The rest have lower values. This means that this particular dataset is the one w
 
 ![bounded_a](Images/bounded_a.png)
 
-At a first glance, the bounded local and global seem equal, but if you pay close attention, for some queries they are not.
+At a first glance, the bounded local and global sensitivities seem equal, but if you pay close attention, for some queries they are not.
