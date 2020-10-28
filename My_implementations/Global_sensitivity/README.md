@@ -37,7 +37,7 @@ I have differentiated between 2 cases:
 We assume that the size of the released dataset is known, i.e. we know there are n amount of records being queried or from which a synopsis (statistical summary) will be made. This is safe to assume as the number of users or IoT devices in an application can be designed to be known*.
 For simplicity, from now on, I will call the datasets D_universe_a and _b, D_release_a and _b, and D_neighbor for (a) and (b).
 
-Note that this is somewhat different from the online (on) (or interactive) and the offline (off) (or non-interactive) definition that [C. Dwork](https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf) introduces in her work. These deal with not knowing or knowing the queries beforehand, respectively. But, we could have the case (a) and case (b) in both (on) or (off):
+Note that this is somewhat different from the **online (on)** (or interactive) and the **offline (off)** (or non-interactive) definition that [C. Dwork](https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf) introduces in her work. These deal with not knowing or knowing the queries beforehand, respectively. But, we could have the case (a) and case (b) in both (on) or (off):
 1. Scenario (a) + (on): API that allows external entities to query in a DP manner a subset of the school dataset you host internally (or its entirety).
 2. Scenario (a) + (off): Release externally a DP synopsis (statistical summary) of a subset of the school dataset you host internally (or its entirety).
 3. Scenario (b) + (on): API that allows external entities to query in a DP manner a dataset updated in real-time by IoT devices hosted internally or decentrally.
