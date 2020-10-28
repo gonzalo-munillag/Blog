@@ -64,7 +64,7 @@ Note that this is somewhat different from the online (on) (or interactive) and t
 
 For this notebook, we will consider Scenario (a) + (off) and (b) + (off).
 
-Also note that (a) and (b) is also somewhat different to local DP (LDP) (DP applied on the device, usually randomized response) versus global DP (GDP) (the third party trusted with all the data, allows for other algorithms). This notebook is focused on GDP. So we have (a) + (off) + (GDP) and (b) + (off) + (GDP). 
+Also note that (a) and (b) is also somewhat different to (i) **local DP (LDP)**. LDP is applied at the device level on individual data points before any third party aggregates all data points from all devices, usually randomized response is the DP mechanism of choice. They are also different to (ii) **global DP (GDP)**. GDP is applied when a trusted third party gathers all the data and applies a DP mechanism on the aggregate and not at a record-level. GDP is not as restrictive as LDP in terms of allowed DP mechanisms. This notebook is focused on GDP. So we have (a) + (off) + (GDP) and (b) + (off) + (GDP). 
 
 ## Mean questions for clarification: 
 - How can (b) and (GDP) go together? The third-party can host a server to process real-time data. 
