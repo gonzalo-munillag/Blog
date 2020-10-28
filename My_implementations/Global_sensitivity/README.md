@@ -29,25 +29,6 @@ I have not come across an intuition for having a larger hamming distance (please
 
 I am however far from certain of my hypothesis for the intuition behind a larger hamming distance.
 
-## Contributions of the notebook
-
-1. I programmed a function that calculates the bounded and unbounded sensitivity of a dataset formed by numeric columns- Additionally, it allows you to vary the hamming distance. Its empirical nature will not allow it to scale well, i.e., the function creates all possible neighboring datasets, with k less or more records (for unbounded DP) and with the same amount of records but changing k values (bounded DP). Where k is the hamming distance. The function calculates the query result for each possible neighboring dataset, then calculates all possible L1 norms, and then chooses the maximum. That will be the sensitivity defined in DP.
-2. The sensitivity can be calculated for most of the basic queries: mean, median, percentile, sum, var, std, count*.
-
-I tried for different domains, bounded and unbounded sensitivities, different hamming distances. If you are impatient, you can go directly to the [results](#results). 
-
-## Conclusions from results
-
-1. Increasing the hamming distance will increase the sensitivities, it makes sense as the larger the number of elements you can include, the more outliers will be present in the neighboring datasets, increasing the L1 norm. 
-2. This increase in sensitivity in turn will increase the noise added. Whether this is helpful or unhelpful (as the hamming distance multiplies the chosen epsilon in the definition of DP), needs further study. On the one hand, having a larger hamming distance will make the probability ratio more distinguishable (undesirable), but at the same time, the randomized mechanisms will contain more noise.
-3. Bounded sensitivities seem smaller than unbounded ones. But that is not always the case, you can check the example given in the next [blog post](https://github.com/gonzalo-munillag/Blog/tree/main/My_implementations/Local_sensitivity), where I give a visual example of how sensitivities are calculated.
-4. Bounded sensitivities are more taxing to compute than unbounded, but that might be because of how I implemented the functions.
-5. Sensitivities, in general, seem to either plateau, have a logarithmic behavior, or linear. However, this cannot be generalized as the number of samples is very small.
-
-**Note: Unbounded sensitivity can be achieved in 2 ways, either by adding or subtracting records. In this notebook, I computed both at the same time and chose the one that yielded the highest sensitivity. However, I would say that in a real scenario, you could take either and calculate the sensitivity, as both equally protect the privacy of the individuals in the records. However, it is true that for the same privacy guarantees, one might use less noise than the other. This is an object for discussion.**
-
-Note: these conclusions have been drawn from a set of experiments, it sets the ground for hypothesis but to assert the conclusions we would need to prove them theoretically.
-
 ## Use case and considerations
 
 I have differentiated between 2 cases:
@@ -77,6 +58,26 @@ Also note that (a) and (b) is also somewhat different to (i) **local DP (LDP)**.
 The main difference in this notebook between scenario a and b (aside from the one mentioned), is programmatic: How you define the universe to input into the functions. The functions I created (for the sensitivities in unbounded and bounded DP) serve both scenarios. But in scenario b, aside from the fact that you have only a range of values, to calculate the sensitivity, you have to make as many replicates of each value of the universe as the size of the released dataset. Why? Because if you define your range like e.g. D_universe_b = {'Age': [1, 2, ..., 99, 100]} and with a |D_release| = 4, you could on real-time get a D_release_b={'Age':[100,100,100,100]} or another like D_release_b={'Age':[35, 35, 35, 35]}.
 
 Something to also note is that the functions that calculate the sensitivities only need a universe and the size of the released dataset (together with the hamming distance). They do not need the actual release dataset, which could be a possibility.
+
+## Contributions of the notebook
+
+1. I programmed a function that calculates the bounded and unbounded sensitivity of a dataset formed by numeric columns- Additionally, it allows you to vary the hamming distance. Its empirical nature will not allow it to scale well, i.e., the function creates all possible neighboring datasets, with k less or more records (for unbounded DP) and with the same amount of records but changing k values (bounded DP). Where k is the hamming distance. The function calculates the query result for each possible neighboring dataset, then calculates all possible L1 norms, and then chooses the maximum. That will be the sensitivity defined in DP.
+2. The sensitivity can be calculated for most of the basic queries: mean, median, percentile, sum, var, std, count*.
+
+I tried for different domains, bounded and unbounded sensitivities, different hamming distances. If you are impatient, you can go directly to the [results](#results). 
+
+## Conclusions
+
+1. Increasing the hamming distance will increase the sensitivities, it makes sense as the larger the number of elements you can include, the more outliers will be present in the neighboring datasets, increasing the L1 norm. 
+2. This increase in sensitivity in turn will increase the noise added. Whether this is helpful or unhelpful (as the hamming distance multiplies the chosen epsilon in the definition of DP), needs further study. On the one hand, having a larger hamming distance will make the probability ratio more distinguishable (undesirable), but at the same time, the randomized mechanisms will contain more noise.
+3. Bounded sensitivities seem smaller than unbounded ones. But that is not always the case, you can check the example given in the next [blog post](https://github.com/gonzalo-munillag/Blog/tree/main/My_implementations/Local_sensitivity), where I give a visual example of how sensitivities are calculated.
+4. Bounded sensitivities are more taxing to compute than unbounded, but that might be because of how I implemented the functions.
+5. Sensitivities, in general, seem to either plateau, have a logarithmic behavior, or linear. However, this cannot be generalized as the number of samples is very small.
+
+**Note: Unbounded sensitivity can be achieved in 2 ways, either by adding or subtracting records. In this notebook, I computed both at the same time and chose the one that yielded the highest sensitivity. However, I would say that in a real scenario, you could take either and calculate the sensitivity, as both equally protect the privacy of the individuals in the records. However, it is true that for the same privacy guarantees, one might use less noise than the other. This is an object for discussion.**
+
+Note: these conclusions have been drawn from a set of experiments, it sets the ground for hypothesis but to assert the conclusions we would need to prove them theoretically.
+
 
 ### Limitations:
 1. The functions to calculate sensitivity do not scale well in terms of the size of your universe
