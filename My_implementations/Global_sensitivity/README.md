@@ -47,6 +47,10 @@ For this notebook, we will consider Scenario (a) + (off) and (b) + (off).
 
 Also note that (a) and (b) is also somewhat different to (i) **local DP (LDP)**. LDP is applied at the device level on individual data points before any third party aggregates all data points from all devices, usually randomized response is the DP mechanism of choice. They are also different to (ii) **global DP (GDP)**. GDP is applied when a trusted third party gathers all the data and applies a DP mechanism on the aggregate and not at a record-level. GDP is not as restrictive as LDP in terms of allowed DP mechanisms. This notebook is focused on GDP. So we have (a) + (off) + (GDP) and (b) + (off) + (GDP). 
 
+## Adversary model
+
+The adversary model adopted in the paper mentioned above is the worst-case scenario and it will be the one I adopt for this notebook: An attacker has infinite computation power, and because DP provides privacy given adversaries with arbitrary background knowledge, it is okay to assume that the adversary has full access to all the records (adversary knows all the universe, i.e. D_universe). But there is a dataset made from the universe without an individual (D_release), and the adversary does not know who is and who is not in it (this is the only thing the adversary does not know about the universe), but the adversary knows D_release contains people with a particular quality (the students who have not been in probation). With D_universe, the attacker will try to reconstruct the dataset he/she does not know (D_release) by employing queries on D_release without having access to it.
+
 ## Mean questions for clarification: 
 - How can (b) and (GDP) go together? The third-party can host a server to process real-time data. 
 - Then, why does not the third party aggregate this real-time data and do (a) instead of (b)? It could, but because your dataset is ever-growing, you would need to compute sensitivities every time your dataset would change, which is in real-time, that can be computationally inefficient. 
