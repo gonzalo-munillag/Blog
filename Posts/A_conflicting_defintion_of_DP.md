@@ -59,7 +59,8 @@ My takeaways:
 
  1. We have to be mindful of the distinction between aim and definition.
  2. My definition of DP: DP is a mathematically guarantee that any individual in a dataset is indistinguishable from others to an extent bounded by a factor of exp(epsilon).
- 3. You can see finding epsilon as an optimization problem that tries to maximize utility, OR rather (my view) you can see it as fitting epsilon to a given utility acceptance criteria.
+ 3. How I would re-write their goal: Differential privacy aims to provide means to maximize the accuracy of queries from statistical databases while fitting an upper bound to the chances of identifying its records.
+ 3. You can see finding epsilon as an optimization problem that tries to maximize utility, OR rather (in my point of view) you can see it as fitting epsilon to a given utility acceptance criteria.
 
 
 However, I could be wrong for all I know; this is the reason why I write this blog, to become smarter together with you!
