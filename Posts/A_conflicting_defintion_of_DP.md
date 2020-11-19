@@ -63,5 +63,5 @@ My takeaways:
  3. You can see finding epsilon as an optimization problem that tries to maximize utility, OR rather (in my point of view) you can see it as fitting epsilon to a given utility acceptance criteria.
 
 
-However, I could be wrong for all I know; this is the reason why I write this blog, to become smarter together with you!
+However, I could be wrong for all I know; this is the reason why I write this blog, to become smarter together with you!  
 What is your opinion?
