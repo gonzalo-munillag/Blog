@@ -55,7 +55,7 @@ This is what I think they tried to convey with their definition: They aim to fin
 Personally, I would not mix those two words in the same sentence, as they make the sentence paradoxical.
 
 
-My takeaways:
+## My takeaways
 
  1. We have to be mindful of the distinction between aim and definition.
  2. My definition of DP: DP is a mathematically guarantee that any individual in a dataset is indistinguishable from others to an extent bounded by a factor of exp(epsilon).
