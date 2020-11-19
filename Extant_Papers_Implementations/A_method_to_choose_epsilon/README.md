@@ -13,9 +13,10 @@ My humble opinion is that the paper is succinct, elegant and it has the ability 
 [Jump to the replicated figure if you are impatient](#results) :) 
 The notebook allows you to expand and test the approach of the paper for different queries. They plot the mean query, but I also plotted the median query. I encourage you to get the code and plot e.g. the variance query.
 
-**Note**: The author abuses notation and uses the probability P(k(w) = x) instead of the probability density function of Laplace, f(k(w) = x), on Definition 3 onwards. This might confuse readers, as the result of P(k(w) = x) using a continuous distribution is 0. Using f(k(w) = x) one can see the output as the density of the distribution on x. However, for section 4.1 the author used the cumulative distribution function.
-For Definition 3, he could have used the cumulative distribution function, however, qualitatively the result would be the same.
-Moreoever, it is also used in section 5.1, which beautifully resonates with how the proof for using the Laplace distribution is written in [page 32 of C. Dwork DP foundations book](https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf). 
+**Note**: Note that the author uses "Pr" to denote cumulative distribution function, and "P" to refer to probability density function. So when you see P(k(w) = x), it is not the point mass at x, it is instead the value of the probability density evaluated at x. "P" is used in Definition 3 onwards. However, for section 4.1 the author used the cumulative distribution function, using "Pr".
+For Definition 3, he could have used the cumulative distribution function, qualitatively the result would be the same.
+Most importantly, this notation (P(k(w) = x)) is also used in section 5.1.
+The probability density functions in the inequalities of 5.1 resonate beautifully with the proof of the Laplace mechanism for DP in [page 32 of C. Dwork DP foundations book](https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf), as she also uses the probability density function. 
 
 ## Notebook contributions
 
