@@ -15,7 +15,7 @@ The notebook allows you to expand and test the approach of the paper for differe
 
 **Note**: The author abuses notation and uses the probability P(k(w) = x) instead of the probability density function of Laplace, f(k(w) = x), on Definition 3 onwards. This might confuse readers, as the result of P(k(w) = x) using a continuous distribution is 0. Using f(k(w) = x) one can see the output as the density of the distribution on x. However, for section 4.1 the author used the cumulative distribution function.
 For Definition 3, he could have used the cumulative distribution function, however, qualitatively the result would be the same.
-Moreoever, it is also used in section 5.1, which beautifully resonates with how the proof for using the Laplace distribution is written in [C. Dwork DP foundations book](https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf). 
+Moreoever, it is also used in section 5.1, which beautifully resonates with how the proof for using the Laplace distribution is written in [page 32 of C. Dwork DP foundations book](https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf). 
 
 ## Notebook contributions
 
