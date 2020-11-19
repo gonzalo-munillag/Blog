@@ -40,8 +40,9 @@ So that is why you could perform a loop:
 2. while (utility != acceptance criteria):  
 3. Apply DP with an epsilon.  
 4. Apply your model and measure accuracy and benchmark it against your acceptance criteria.
-5. If it does not check, go back to line 3. Lower the epsilon and check accuracy until it checks. 
-6. If it checks, then end OR go back to line 3 if you think you do not need so much utility, and therefore you could do with more privacy. 
+5. If it does not check, go back to line 3. Lower the epsilon and check accuracy until it checks.  
+6. If it checks, then end OR go back to line 3 if you think you do not need so much utility, and therefore you could do with more privacy.  
+
 You could use a binary search as the tool to find the optimal solution, as it was suggested in this [extant paper](https://git.gnunet.org/bibliography.git/plain/docs/Choosing-%CE%B5-2011Lee.pdf) I took the time to [implement](https://github.com/gonzalo-munillag/Blog/tree/main/Extant_Papers_Implementations/A_method_to_choose_epsilon).
 
 This loop that I described is an optimization problem, you want to maximize utility (a target function), and you try epsilons (systematically selecting inputs) to see how close you get to that accuracy (compute the function, the whole process in this case) and stop until you reach it. We thus would find the best solution. 
