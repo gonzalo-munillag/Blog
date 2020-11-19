@@ -1,1 +1,1 @@
-**This reposritory contains my own implementations.**
+**You may find here my own implementations.**
