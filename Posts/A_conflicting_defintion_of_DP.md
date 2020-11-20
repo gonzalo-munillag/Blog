@@ -10,7 +10,7 @@ The definition of our bullseye:
 First of all, that is not a definition for DP, that is one of the byproducts for which DP is useful, and partly for what DP was created. They are describing a goal, not a definition. Perhaps the authors intended it as such, then *hey, fair enough*. But even so, as my colleague correctly pointed out, there is something off using "maximizing" and "minimizing" in the same sentence.
 
 
-## About the definition of DP:
+## About the definition of DP
 
 Definitions from the people who invented DP (1, 2), and an awesome researcher (3):
 
