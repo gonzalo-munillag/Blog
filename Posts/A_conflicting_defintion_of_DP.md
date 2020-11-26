@@ -1,4 +1,4 @@
-# A conflicting definition of DP
+# A Conflicting Definition of DP
 
 A colleague of mine pointed me to a definition of differential privacy (DP), which was included in a slide deck for a seminar at TU Munich. He shared it because he felt there was something off about it. This post is the result of this discussion.
 
@@ -22,7 +22,7 @@ The definition of differential privacy requires that a randomized computation yi
 " An Economic View. Differential privacy promises to protect individuals from any additional harm that they might face due to their data being in the private database x that they would not have faced had their data not been part of x." - [Pg. 20, Algorithmic foundations](https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf)
 
 (3)
-"For an individual whose data is represented by a record in **I**, differential privacy offers an appealing guarantee. It says that including this individual’s record cannot significantly affect the output: it can only make some outputs slightly more (or less) likely – where “slightly” is defined as at most a factor of exp(epsilon). If an adversary infers something about the individual based on the output, then the same inference would also be likely to occur even if the individual’s data had been removed from the database before running the algorithm."
+"For an individual whose data is represented by a record in **I**, differential privacy offers an appealing guarantee. It says that including this individual’s record cannot significantly affect the output: it can only make some outputs slightly more (or less) likely – where “slightly” is defined as at most a factor of exp(epsilon). If an adversary infers something about the individual based on the output, then the same inference would also be likely to occur even if the individual’s data had been removed from the database before running the algorithm." - [DPBench](https://arxiv.org/abs/1512.04817)
 
 Standing on the shoulders of giants, I define DP as follows: DP is a mathematically guarantee that any individual in a dataset is indistinguishable from others to an extent bounded by a factor of exp(epsilon).
 
