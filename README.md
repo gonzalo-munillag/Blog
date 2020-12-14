@@ -2,7 +2,7 @@ Hi!
 
 I am a PhD student researching privacy preservation techniques, namely differential privacy.
 
-This repository contains my own code with some of my experiments and ideas, and implementations of papers from other authors. I also attached a link to my current publications. 
+This repository contains my own code with some of my experiments and ideas, and implementations of papers from other authors. I also attached links to my current publications. 
 
 I hope you enjoy the repo :) 
 
