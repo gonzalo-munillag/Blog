@@ -21,13 +21,11 @@ P(M(x) = O) = P(M(x') = O) * exp(epsilon * |x ⊖ x'|)
 
 Where M is a randomized computation, x a dataset, x' its neighbor at hamming distance k = |x ⊖ x'|, and O an output of M given x and x'. 
 
-k is usually 1, to the best of my knowledge, because one aims to protect one individual in the dataset, and by definition, each individual within would therefore be protected. By making the probabilities of obtaining an output O similar between two datasets that differ only in 1 record, one is successfully cloaking the real value of O and therefore not updating fully the knowledge of the adversary, which if done properly, would still be 50/50 between wich dataset was actually the real one. 
+k was first defined to be equal to 1, because one aims to protect one individual in the dataset, and by definition, each individual within would therefore be protected. By making the probabilities of obtaining an output O similar between two datasets that differ only in 1 record, one is successfully cloaking the real value of O and therefore not updating fully the knowledge of the adversary, which if done properly, would still be around 50/50 with a small enough epsilon between wich dataset was actually the real one. 
 
-Looking at the definition of DP, the higher your k, the more you would increase exp(.), which means that the difference between the probabilities to obtain those outputs will be larger, and thus your privacy would not be equally conserved (although sensitivities increase with k as you can see in the plots).
+Looking at the definition of DP, the higher your k, the more you would increase exp(.), which means that the difference between the probabilities to obtain those outputs will be smaller (although sensitivities increase with k as you can see in the plots).
 
-I have not come across an intuition for having a larger hamming distance (please feel free to [connect](https://www.linkedin.com/in/gonzalo-munilla/) if you have an explanation). Looking at the previous paragraph, it would seem as if having a hamming distance of k=2 would aim to protect pairs of records (individuals), i.e. it accounts for the fact that there are dependencies between records in the dataset that need to be considered as they increase the probability ratio (undesirable). It could make sense if there are some binary relationships between records, e.g. pairs of siblings, or n-ary relationships for k=n, e.g. in a social network. 
-
-I am however far from certain of my hypothesis for the intuition behind a larger hamming distance.
+The intutition behind a larger Hamming distance is groups privacy, whereby a set of individuals with similar qualities, e.g. a family, are indistinguishable from other sets of individuals of the same size. E.g. having a hamming distance of k=2 would aim to protect pairs of records (individuals), i.e. it accounts for the fact that there are dependencies between records in the dataset that need to be considered, lest an output reveals more information. It could make sense if there are some binary relationships between records, e.g. pairs of siblings, or n-ary relationships for k=n, e.g. in a social network. 
 
 ## Use case and considerations
 
