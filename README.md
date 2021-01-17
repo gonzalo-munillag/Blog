@@ -13,6 +13,7 @@ Cheers!
 
 | category | topic | date | title |
 |:-------|:-----|:-----|:------|
+|Post|Differential Privacy|2021-01-17|[Basic Definitions of Differential Privacy](https://github.com/gonzalo-munillag/Blog/blob/main/Posts/Basic_definitions_of_differential_privacy.pdf)|
 |Post|Differential Privacy|2020-11-19| [A Conflicting Definition of Differential Privacy](https://github.com/gonzalo-munillag/Blog/blob/main/Posts/A_conflicting_defintion_of_DP.md)  
 |Implementation|Differential Privacy|2020-10-21| [Empirical Calculation of Local Sensitivity With Varying Hamming Distance From Scratch](https://github.com/gonzalo-munillag/Blog/tree/main/My_implementations/Local_sensitivity)  
 |Implementation|Differential Privacy|2020-10-21| [Empirical Calculation of Global Sensitivity With Varying Hamming Distance From Scratch](https://github.com/gonzalo-munillag/Blog/tree/main/My_implementations/Global_sensitivity)  
