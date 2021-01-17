@@ -1,1 +1,3 @@
-**Here you may find posts without any implementation; these are mainly ideas or discussions.**
+**Here you may find posts without any implementation.  
+Tese are ideas or discussions.**
+
