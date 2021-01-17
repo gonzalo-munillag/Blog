@@ -7,4 +7,4 @@ A colleague of mine pointed me to a definition of differential privacy (DP), whi
 
 ## 2 Basic definitions of DP
 
-The document contains all the basic information I would have loved to have when I started researching about DP.
+The [document](https://github.com/gonzalo-munillag/Blog/blob/main/Posts/Basic_Definitions_of_Differential_Privacy.pdf) contains all the basic information I would have loved to have when I started researching about DP.
