@@ -1,6 +1,6 @@
 Hi!
 
-I am a PhD student researching privacy preservation techniques, namely differential privacy.
+I am a PhD student researching privacy-preserving technologies, namely differential privacy.
 
 This repository contains my own code with some of my experiments and ideas, and implementations of papers from other authors. I also attached links to my current publications. 
 
