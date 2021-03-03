@@ -13,7 +13,7 @@ Cheers!
 
 | category | topic | date | title |
 |:-------|:-----|:-----|:------|
-|Post| Privacy |2021-03-03|[Information crunch from OpenMined privacy course](https://github.com/gonzalo-munillag/Private_AI_OpenMined/blob/main/Our_Privacy_Opportunity/5_Highlights.md) |
+|Post| Privacy |2021-03-03|[Information crunch from OpenMined's privacy course](https://github.com/gonzalo-munillag/Private_AI_OpenMined/blob/main/Our_Privacy_Opportunity/5_Highlights.md) |
 |Post|Differential Privacy|2021-01-17|[Basic Definitions of Differential Privacy](https://github.com/gonzalo-munillag/Blog/blob/main/Posts/Basic_Definitions_of_Differential_Privacy.pdf)|
 |Post|Differential Privacy|2020-11-19| [A Conflicting Definition of Differential Privacy](https://github.com/gonzalo-munillag/Blog/blob/main/Posts/A_conflicting_defintion_of_DP.md)  
 |Implementation|Differential Privacy|2020-10-21| [Empirical Calculation of Local Sensitivity With Varying Hamming Distance From Scratch](https://github.com/gonzalo-munillag/Blog/tree/main/My_implementations/Local_sensitivity)  
