@@ -8,7 +8,7 @@ I hope you enjoy the repo :)
 
 Cheers!
 
-
+Number of posts: 10
 ---
 
 | category | topic | date | title |
