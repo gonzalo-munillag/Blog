@@ -16,7 +16,6 @@ The notebook allows you to expand and test the approach of the paper for differe
 **Note**: The author uses "Pr" to denote cumulative distribution functions, and "P" to refer to probability density functions. So when you see P(k(w) = x), it is not the point mass at x, it is instead the value of the probability density evaluated at x. "P" is used in Definition 3 onwards. However, for section 4.1 the author used the cumulative distribution function, using "Pr".
 For Definition 3, he could have used the cumulative distribution function, qualitatively the result would be the same.
 Most importantly, this notation (P(k(w) = x)) is also used in section 5.1.
-The probability density functions in the inequalities of 5.1 resonate beautifully with the proof of the Laplace mechanism for DP in [page 32 of C. Dwork DP foundations book](https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf), as she also uses the probability density function. 
 
 ## Notebook contributions
 
