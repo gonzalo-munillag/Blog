@@ -33,7 +33,7 @@ IMPORTANT: The authors use an approximation (5.1 equation 4-5) based on the rele
 ### Some concepts before we start:
 
 - When I talk about bounded sensitivity, I refer to the sensitivity that comes from a bounded DP definition, i.e. the neighboring dataset is built by changing the records of the dataset (not adding to removing records). E.g. x = {1, 2, 3} with universe X = {1, 2, 3, 4}, a neighboring dataset in this case would be: x' = {1, 2, 4}
--  When I talk about unbounded sensitivity, I refer to the sensitivity that comes from an unbounded DP definition, i.e. the neighboring dataset is built by adding or removing records) E.g. x = {1, 2, 3} with universe X = {1, 2, 3, 4}, a neighboring dataset in this case could be: x' = {1, 2} or {1, 3} or {1, 2, 3, 4}
+-  When I talk about unbounded sensitivity, I refer to the sensitivity that comes from an unbounded DP definition, i.e. the neighboring dataset is built by adding or removing records. E.g. x = {1, 2, 3} with universe X = {1, 2, 3, 4}, a neighboring dataset in this case could be: x' = {1, 2} or {1, 3} or {1, 2, 3, 4}
 - The prior is the prior knowledge of an adversary, i.e. his/her best guess about which dataset is probably the real one. The paper and this notebook assume a uniform prior.
 - The posterior is the updated knowledge of the adversary, i.e. once he/she has seen the query results, the posterior maps a probability to a possible real dataset. The higher it is, the more confident will the adversary be about a dataset being the real one.
 
