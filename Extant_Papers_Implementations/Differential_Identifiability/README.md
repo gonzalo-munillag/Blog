@@ -37,27 +37,27 @@ All the plots where successfully replicated.
 
 This plot shows the upper bound formulated in the paper.
 
-\includegraphics[]{Images/1.png}
+![1](Images/1.png)
 
 
 I performed binary search to find the optimal value of ε per value of risk disclosure (ρ). This way I went from the previous image to a tight upper bound curve:
 
-\includegraphics[]{Images/2.png}
+![1](Images/2.png)
 
 However, for some functions like the median, there is no need to go beyond the formulation, because the upper bound is an equality, and therefore, you get precisely the amount of noise you need.
 
-\includegraphics[]{Images/3.png}
+![1](Images/3.png)
 
 We can see here how the noise range widens the less risk disclosure risk is accepted:
 
-\includegraphics[]{Images/4.png}
+![1](Images/4.png)
 
 Also for values of  ε for the DP enthusiasts:
 
-\includegraphics[]{Images/5.png}
+![1](Images/5.png)
 
 Finally, we can see that varying the dataset size, we need less noise the larger the dataset is:
 
-\includegraphics[]{Images/6.png}
+![1](Images/6.png)
 
 I hope you enjoy the [notebook](https://github.com/gonzalo-munillag/Blog/blob/main/Extant_Papers_Implementations/Differential_Identifiability/Differential_identifiability.ipynb)!
