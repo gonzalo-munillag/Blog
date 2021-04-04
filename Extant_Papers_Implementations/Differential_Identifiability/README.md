@@ -24,7 +24,7 @@ Additionally, there is a connection between ε and ρ, which one can exploit to 
 
 In this paper, Jaewoo proves how to achieve DI and gives examples of how to use it.
 
-Greate knowledge nugget:   
+Great knowledge nugget:   
 "The protection of differential privacy measures only the impact of an individual on the output, not the ability to identify an individual [13], or even the ability to infer data values for an individual [4]."
 
 ## My thoughts on the paper
