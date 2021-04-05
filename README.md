@@ -14,7 +14,7 @@ Number of posts: 11
 
 | category | topic | date | title |
 |:-------|:-----|:-----|:------|
-|Extant Paper Implementation| Extant Paper Implementation |2021-04-04|[Differential Identifiability](https://github.com/gonzalo-munillag/Blog/tree/main/Extant_Papers_Implementations/Differential_Identifiability) |
+|Extant Paper Implementation| Differential Privacy |2021-04-04|[Differential Identifiability](https://github.com/gonzalo-munillag/Blog/tree/main/Extant_Papers_Implementations/Differential_Identifiability) |
 |Post| Privacy |2021-03-03|[Information crunch from OpenMined's privacy course](https://github.com/gonzalo-munillag/Private_AI_OpenMined/blob/main/Our_Privacy_Opportunity/5_Highlights.md) |
 |Post|Differential Privacy|2021-01-17|[Basic Definitions of Differential Privacy](https://github.com/gonzalo-munillag/Blog/blob/main/Posts/Basic_Definitions_of_Differential_Privacy.pdf)|
 |Post|Differential privacy|2020-11-19| [A Conflicting Definition of Differential Privacy](https://github.com/gonzalo-munillag/Blog/blob/main/Posts/A_conflicting_defintion_of_DP.md)  
