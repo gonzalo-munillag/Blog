@@ -21,8 +21,9 @@ Note: The author uses "Pr" to denote cumulative distribution functions and "P" t
 5. I coded the binary search explained in the paper to find the correct epsilon value (Given a disclosure risk) for any query type.
 6. With this code, you can easily play by using larger or different datasets than the one used in the paper. I used that exact data to replicate the results.
 7. This notebook implements more queries beyond the mean and the median used for explanations in the paper. I encourage you to try them out!
-IMPORTANT: The authors use an approximation of sensitivity Δv (Section 5.1  Equations 4,5) based on the released dataset and its neighbors. Furthermore, they use sensitivity based on unbounded DP (Δf) to calculate the upper bound. In this notebook, however, I use the definition for sensitivity based on bounded DP as Δv. I do this is because, to the best of my knowledge, bounded DP sensitivity should be equal to the one the authors chose as long as I keep the Hamming distance to 1. However, given that the results obtained are the same as the authors, we can be sure that my approach is correct. Perhaps back then, the terms bounded and unbounded DP were not commonly used.
-  
+
+**IMPORTANT**: The authors use an approximation of sensitivity Δv (Section 5.1  Equations 4,5) based on the released dataset and its neighbors. Furthermore, they use sensitivity based on unbounded DP (Δf) to calculate the upper bound. In this notebook, however, I use the definition for sensitivity based on bounded DP as Δv. I do this is because, to the best of my knowledge, bounded DP sensitivity should be equal to the one the authors chose as long as I keep the Hamming distance to 1. However, given that the results obtained are the same as the authors, we can be sure that my approach is correct. Perhaps back then, the terms bounded and unbounded DP were not commonly used.
+
 ### Some concepts before we start:
 
 - When I talk about bounded sensitivity, I refer to the sensitivity that comes from a bounded DP definition, i.e., the neighboring dataset is built by changing the dataset's records (Not adding or removing records). E.g., with x = {1, 2, 3} from universe X = {1, 2, 3, 4}, a neighboring dataset in this case would be: x' = {1, 2, 4}
