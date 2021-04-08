@@ -2,7 +2,7 @@
 
 ## Goal
 
-The [notebook](https://github.com/gonzalo-munillag/Blog/blob/main/Extant_Papers_Implementations/A_method_to_choose_epsilon/How_much_is_enough_Calculating_An_Optimal_Epsilon.ipynb) behind this post implements the following paper from 2011 with around 20 citations, **[How Much Is Enough? Choosing Epsilon for Differential Privacy](https://link.springer.com/chapter/10.1007%2F978-3-642-24861-0_22)**
+The [notebook](https://github.com/gonzalo-munillag/Blog/blob/main/Extant_Papers_Implementations/A_method_to_choose_epsilon/How_much_is_enough_Calculating_An_Optimal_Epsilon_Last_version.ipynb) behind this post implements the following paper from 2011 with around 20 citations, **[How Much Is Enough? Choosing Epsilon for Differential Privacy](https://link.springer.com/chapter/10.1007%2F978-3-642-24861-0_22)**
 
 ## Paper summary
 
@@ -13,7 +13,7 @@ Note: The author uses "Pr" to denote cumulative distribution functions and "P" t
 
 ## Notebook contributions
 
-[Notebook](https://github.com/gonzalo-munillag/Blog/blob/main/Extant_Papers_Implementations/A_method_to_choose_epsilon/How_much_is_enough_Calculating_An_Optimal_Epsilon.ipynb)
+[Notebook](https://github.com/gonzalo-munillag/Blog/blob/main/Extant_Papers_Implementations/A_method_to_choose_epsilon/How_much_is_enough_Calculating_An_Optimal_Epsilon_Last_version.ipynb)
 
 1. I coded a function that calculates the bounded and unbounded sensitivity of a dataset containing numeric columns. However, how to code the algorithm was not explained in the paper. With these functions, you can also vary the Hamming distance k (Check these functions in GitHub [blog posts](https://github.com/gonzalo-munillag/Blog/tree/main/My_implementations/Global_sensitivity). How does it do it? Empirically - This function creates all possible neighboring datasets with k less or more records for unbounded DP and with the same amount of records but changing k values for bounded DP. Once the function creates the neighboring datasets, it calculates the sensitivity empirically. More specifically, the function calculates the query result for each possible neighboring dataset, calculates all possible L1 norms, and then chooses the maximum. Note that, for simplicity's sake for unbounded DP, the function selects the largest sensitivity between the two paradigms: one more record or one less record.
 3. I found no mistakes in the paper, only a typo in a number in a formula. The numerator should be 0.3062 and not 0.3602 on page 333 (Page 9 of the PDF). 
@@ -31,7 +31,6 @@ Note: The author uses "Pr" to denote cumulative distribution functions and "P" t
 - The prior is the prior knowledge of an adversary, i.e., his/her best guess about which dataset is probably the real one. The paper and this notebook assume a uniform prior.
 - The posterior is the updated knowledge of the adversary, i.e., once he/she has seen the query results, the posterior maps a probability to a possible real dataset. The higher it is, the more confident will the adversary be about a dataset being the real one.
 
-<a name="results"></a>
 # Results
 
 This is the plot I replicated faithfully from the paper:
