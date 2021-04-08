@@ -2,7 +2,7 @@
 
 ## Goal
 
-The [notebook](https://github.com/gonzalo-munillag/Blog/blob/main/Extant_Papers_Implementations/A_method_to_choose_epsilon/How_much_is_enough_Calculating_An_Optimal_Epsilon.ipynb)'s goal behind this post is to implement the following paper from 2011 with around 20 citations, **[How Much Is Enough? Choosing Epsilon for Differential Privacy](https://link.springer.com/chapter/10.1007%2F978-3-642-24861-0_22)**
+The [notebook](https://github.com/gonzalo-munillag/Blog/blob/main/Extant_Papers_Implementations/A_method_to_choose_epsilon/How_much_is_enough_Calculating_An_Optimal_Epsilon.ipynb) behind this post implements the following paper from 2011 with around 20 citations, **[How Much Is Enough? Choosing Epsilon for Differential Privacy](https://link.springer.com/chapter/10.1007%2F978-3-642-24861-0_22)**
 
 ## Paper summary
 
