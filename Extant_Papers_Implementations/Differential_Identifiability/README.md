@@ -1,6 +1,6 @@
 # Extant paper implementation: Differential Identifiability
 
-[Notebook](https://github.com/gonzalo-munillag/Blog/blob/main/Extant_Papers_Implementations/Differential_Identifiability/Differential_identifiability.ipynb)
+[Notebook](https://github.com/gonzalo-munillag/Blog/blob/main/Extant_Papers_Implementations/Differential_Identifiability/Differential_identifiability.html)
 
 ## Goal
 
@@ -60,4 +60,4 @@ Finally, we can see that varying the dataset size, we need less noise the larger
 
 ![1](Images/6.png)
 
-I hope you enjoy the [notebook](https://github.com/gonzalo-munillag/Blog/blob/main/Extant_Papers_Implementations/Differential_Identifiability/Differential_identifiability.ipynb)!
+I hope you enjoy the [notebook](https://github.com/gonzalo-munillag/Blog/blob/main/Extant_Papers_Implementations/Differential_Identifiability/Differential_identifiability.html)!
