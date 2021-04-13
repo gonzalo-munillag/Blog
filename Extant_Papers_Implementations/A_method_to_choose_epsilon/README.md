@@ -6,10 +6,13 @@ The [notebook](https://github.com/gonzalo-munillag/Blog/blob/main/Extant_Papers_
 
 ## Paper summary
 
-This paper states that even though Differential Privacy (DP) protects any individual in a dataset by cloaking with noise, the most extreme query answers possible between 2 neighboring datasets. Due to the finite amount of dataset possibilities and the worst-case adversary model - almost perfect background knowledge and infinite computation power - some distributions of the real dataset behind the DP query results are more likely than others. Therefore, this imbalance needs to be taken into consideration when calculating epsilon. The authors used a sensitivity based on unbounded DP and an exact calculation of their dataset's norms to find a tight bound for epsilon with binary search.
-My humble opinion is that the paper is succinct, elegant, and can take your understanding of DP further. I would like to thank the authors Jaewoo Lee and Chris Clifton for these days I spent implementing :) Moreover, I invite everyone to look at the paper and check the code to understand it better.
-Jump to the replicated figure if you are impatient :)The notebook allows you to expand and test the paper's approach for different queries. They plot the mean query, but I also plotted the median query. I encourage you to get the code and plot, e.g., the variance query.
-Note: The author uses "Pr" to denote cumulative distribution functions and "P" to refer to probability density functions. So when you see P(k(w) = x), it is not the point mass at x; instead, the authors refer to the value of the probability density at x. "P" is used in Definition 3 onwards. However, for section 4.1, the author used the cumulative distribution function, using "Pr." For Definition 3, he could have used the cumulative distribution function; qualitatively, the result would be the same.Most importantly, this notation (P(k(w) = x)) is also used in section 5.1.
+
+Even though Differential Privacy (DP) in principle protects any individual in a dataset by cloaking with noise the result of an analytics query, DP has its limitations. 
+The limitation addressed in this paper is based on the finite amount of dataset possibilities that a worst-case adversary model (Almost perfect background knowledge and infinite computation power) considers after seeing the output of the DP query.
+Because some actual dataset distributions are more likely than others, the adversary can update his/her knowledge more efficiently. Therefore, this imbalance needs to be taken into consideration when calculating epsilon. The authors formulated a tight bound for epsilon with binary search based on disclosure risk acknowledging this DP defect.
+My humble opinion is that the paper is concise, elegant, and can take your understanding of DP further. I would like to thank the authors Jaewoo Lee and Chris Clifton for these days I spent implementing :) Moreover, I invite everyone to look at the paper and check the code to understand it better.
+Jump to the replicated figures if you are impatient :)The notebook allows you to expand and test the paper's approach for different queries. They plot the mean query, but I also plotted the median query. I encourage you to get the code and plot, e.g., the variance query.
+
 
 ## Notebook contributions
 
@@ -30,6 +33,8 @@ Note: The author uses "Pr" to denote cumulative distribution functions and "P" t
 -  When I talk about unbounded sensitivity, I refer to the sensitivity that comes from an unbounded DP definition, i.e., the neighboring dataset is built by adding or removing records. E.g., with x = {1, 2, 3} and universe X = {1, 2, 3, 4}, a neighboring dataset in this case could be: x' = {1, 2} or {1, 3} or {1, 2, 3, 4}
 - The prior is the prior knowledge of an adversary, i.e., his/her best guess about which dataset is probably the real one. The paper and this notebook assume a uniform prior.
 - The posterior is the updated knowledge of the adversary, i.e., once he/she has seen the query results, the posterior maps a probability to a possible real dataset. The higher it is, the more confident will the adversary be about a dataset being the real one.
+
+**Note**: The author uses "Pr" to denote cumulative distribution functions and "P" to refer to probability density functions. So when you see P(k(w) = x), it is not the point mass at x; instead, the authors refer to the value of the probability density at x. "P" is used in Definition 3 onwards. However, for section 4.1, the author used the cumulative distribution function, using "Pr." For Definition 3, he could have used the cumulative distribution function; qualitatively, the result would be the same. Most importantly, this notation (P(k(w) = x)) is also used in section 5.1.
 
 # Results
 
