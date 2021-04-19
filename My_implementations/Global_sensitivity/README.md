@@ -2,38 +2,39 @@
 
 ## Goal
 
-The goal of this notebook is to showcase 2 functions, one that implements sensitivity based on the unbounded differential privacy (DP) definition, and another that implements sensitivity based on a bounded definition.
+This notebook aims to showcase two functions, one that implements sensitivity based on the unbounded differential privacy (DP) definition, and another that implements sensitivity based on a bounded definition.
 I am not aiming for efficiency but for a deeper understanding of how to implement sensitivity empirically from scratch.
 
 [Notebook](https://github.com/gonzalo-munillag/Blog/blob/main/My_implementations/Global_sensitivity/Global_Sensitivity.ipynb)
 
 ## Background
 
+
 Before continuing there needs to be some clarifications:
 In bounded DP, the neighboring dataset is built by changing the records of the dataset (not adding to removing records). E.g. x = {1, 2, 3} (|x|=3) with universe X = {1, 2, 3, 4}, a neighboring dataset in this case would be: x' = {1, 2, 4} (|x'| = 3). They have the same cardinality.
 In unbounded DP definition, the neighboring dataset is built by adding ot removing records. E.g. x = {1, 2, 3} (|x| = 3) with universe X = {1, 2, 3, 4}, a neighboring dataset in this case could be: x' = {1, 2} or {1, 3} or {1, 2, 3, 4} (|x|=2 or |x|=2 or |x|=4, but not |x|=3). Their cardinality differs by 1.
-The datasets considered are multisets, and their cardinality is the sum of the multiplicities of each value they contain.
-The neighboring datasets are also multisets and are considered neighbors if the hamming distance concerning the original dataset is of value k. This parameter is set by the data scientist, but the original definition of DP has a value of k=1 (used for the previous examples).
+The datasets are multisets, and their cardinality is the sum of the multiplicities of each value they contain.
+The neighboring datasets are also multisets and are considered neighbors if the hamming distance concerning the original dataset is of value k. The data scientist sets this parameter, but the original definition of DP has a value of k=1 (used for the previous examples).
 
 The hamming distance can be seen as the cardinality of the symmetric difference between 2 datasets. With this in mind, the definition of DP can be written as:
 
 P(M(x) = O) = P(M(x') = O) * exp(epsilon * |x ⊖ x'|)
 
-Where M is a randomized computation, x a dataset, x' its neighbor at hamming distance k = |x ⊖ x'|, and O an output of M given x and x'. 
+Where M is a randomized computation, x a dataset, x' its neighbor at hamming distance k = |x ⊖ x'|, and O output of M given x and x'. 
 
-k was first defined to be equal to 1, because one aims to protect one individual in the dataset, and by definition, each individual within would therefore be protected. By making the probabilities of obtaining an output O similar between two datasets that differ only in 1 record, one is successfully cloaking the real value of O and therefore not updating fully the knowledge of the adversary, which if done properly, would still be around 50/50 with a small enough epsilon between wich dataset was actually the real one. 
+K was first defined to be equal to 1 because one aims to protect one individual in the dataset, and by definition, each individual within would therefore be protected. By making the probabilities of obtaining an output O similar between two datasets that differ only in 1 record, one is successfully cloaking the actual value of O and therefore not fully updating the knowledge of the adversary, which, if done correctly, would still be around 50/50 with a small enough epsilon between wich dataset was the real one. 
 
-Looking at the definition of DP, the higher your k, the more you would increase exp(.), which means that the difference between the probabilities to obtain those outputs will be smaller (although sensitivities increase with k as you can see in the plots).
+Looking at the definition of DP, the higher the k, the more exp(·) would increase, which means that the difference between the probabilities to obtain those outputs will be smaller (although sensitivities increase with k, as you can see in the plots).
 
-The intutition behind a larger Hamming distance is groups privacy, whereby a set of individuals with similar qualities, e.g. a family, are indistinguishable from other sets of individuals of the same size. E.g. having a hamming distance of k=2 would aim to protect pairs of records (individuals), i.e. it accounts for the fact that there are dependencies between records in the dataset that need to be considered, lest an output reveals more information. It could make sense if there are some binary relationships between records, e.g. pairs of siblings, or n-ary relationships for k=n, e.g. in a social network. 
+The intuition behind a larger Hamming distance is group privacy, whereby a set of individuals with similar qualities, e.g., a family, are indistinguishable from other sets of individuals of the same size. For example, having a hamming distance of k=2 would aim to protect pairs of records (individuals), i.e., it accounts for the fact that there are dependencies between records in the dataset that need to be considered, lest an output reveals exceeding information. It could make sense if there are some binary relationships between records, e.g., pairs of siblings, or n-ary relationships for k=n, e.g., in a social network. 
 
 ## Use case and considerations
 
 I have differentiated between 2 cases:
-1. (a) The universe of possible values is based on a dataset, and the size of the released dataset is known before release, i.e. the cardinality of the universe subset. This scenario could be e.g. releasing a study based on some students out of all the students at a school. (Note: the dataset to be released cannot be larger than the dataset used for the universe, only equal or smaller).
-2. (b) The universe of possible values is based on a range of values, and the size of the released dataset is known before release. A range is used because the exact values that could potentially be released are not known in advance, thus a range where those values could fall into must be used to perform the sensitivity calculation. This scenario could be e.g. releasing real-time DP results from an IoT device. 
-We assume that the size of the released dataset is known, i.e. we know there are n amount of records being queried or from which a synopsis (statistical summary) will be made. This is safe to assume as the number of users or IoT devices in an application can be designed to be known*.
-For simplicity, from now on, I will call the datasets D_universe_a and _b, D_release_a and _b, and D_neighbor for (a) and (b).
+(a) The universe of possible values is based on a dataset, which the adversary knows. Furthermore, there is a released dataset, which is a subset of the universe. The adversary only knows the size of the released dataset and that the members hold a common characteristic. In the worst case scenario, aligned with differential privacy, the cardinality of the release dataset is one less than the universe, and, therefore, the adversary knows the size of the released dataset. This scenario could be, e.g., releasing a study based on some students out of all the students at a school. (Note: The dataset to be released cannot be larger than the dataset used for the universe, only equal or smaller).
+(b) This case is similar to the previous one, but the universe of possible values is a range of values instead of a dataset. Furthermore,  the adversary knows this range of possible values and the size of the released dataset. We define this second case because sometimes the exact values that could potentially be released are not known in advance; we might only know a range where those values could fall. This scenario could be, e.g., releasing real-time DP results from an IoT device. 
+We assume that the size of the released dataset is known, i.e., we know the adversary queries n amount of records or a synopsis (statistical summary) is released. This last statement about the knowledge of the adversary is realistic because the number of users or IoT devices in an application can be designed to be known.
+For simplicity, from now on, I will call the datasets D_universe_a, D_universe_b, D_release_a, D_release_b, and D_neighbor for (a) and (b).
 
 Note that this is somewhat different from the **online (on)** (or interactive) and the **offline (off)** (or non-interactive) definition that [C. Dwork](https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf) introduces in her work. These deal with not knowing or knowing the queries beforehand, respectively. But, we could have the case (a) and case (b) in both (on) or (off):
 1. Scenario (a) + (on): API that allows external entities to query in a DP manner a subset of the school dataset you host internally (or its entirety).
