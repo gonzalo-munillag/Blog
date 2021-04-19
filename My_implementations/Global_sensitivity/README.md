@@ -87,9 +87,9 @@ Note: these conclusions have been drawn from a set of experiments, it sets the g
 
 ### Limitations:
 1. The functions to calculate sensitivity do not scale well in terms of the size of your universe because they calculate sensitivities empirically.
-2. *The count query sensitivity should be 1 for unbounded and 2 for bounded DP. The former is straightforward because you add or remove one record, increasing or decreasing the total count of the record by one. However, if you have bounded sensitivity, the change of one record might lead to the decrease of the count of one record and the increase of the count of another, yielding a total difference of 2. These 2 cases are not accounted for in this notebook, as we are doing only one-dimensional queries and not higher dimensional queries or releasing histograms. We solely count the number of elements in the array, which leads to a sensitivity of 1 in unbounded and of 0 in bounded. **
+2. **The count query sensitivity should be 1 for unbounded and 2 for bounded DP. The former is straightforward because you add or remove one record, increasing or decreasing the total count of the record by one. However, if you have bounded sensitivity, the change of one record might lead to the decrease of the count of one record and the increase of the count of another, yielding a total difference of 2. These 2 cases are not accounted for in this notebook, as we are doing only one-dimensional queries and not higher dimensional queries or releasing histograms. We solely count the number of elements in the array, which leads to a sensitivity of 1 in unbounded and of 0 in bounded. **
 
-***** If the number of users/IoT devices itself is desired to be protected, then one can take a large sample of records, but not all the records, and the cardinality considered would be the number of the sampled records.
+*If the number of users/IoT devices itself is desired to be protected, then one can take a large sample of records, but not all the records, and the cardinality considered would be the number of the sampled records.*
 
 <a name="results"></a>
 # Results
