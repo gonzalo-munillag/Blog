@@ -14,7 +14,7 @@ Number of posts: 13
 
 | category | topic | date | title |
 |:-------|:-----|:-----|:------|
-|Preprint| DP | 2021-09-22 | [Do I Get the Privacy I Need? Benchmarking Utility in Differential Privacy Libraries](https://arxiv.org/abs/2109.10789)|
+|Preprint| Differential Privacy | 2021-09-22 | [Do I Get the Privacy I Need? Benchmarking Utility in Differential Privacy Libraries](https://arxiv.org/abs/2109.10789)|
 |Preprint| PETs | 2021-07-25 | [Revealing the Landscape of Privacy-Enhancing Technologies in the Context of Data Markets for the IoT: A Systematic Literature Review](https://arxiv.org/abs/2107.11905)|
 |Extant Paper Implementation| Differential Privacy |2021-04-04|[Differential Identifiability](https://github.com/gonzalo-munillag/Blog/tree/main/Extant_Papers_Implementations/Differential_Identifiability) |
 |Post| Privacy |2021-03-03|[Information crunch from OpenMined's privacy course](https://github.com/gonzalo-munillag/Private_AI_OpenMined/blob/main/Our_Privacy_Opportunity/5_Highlights.md) |
